@@ -21,6 +21,8 @@ public class CharacterLoader : MonoBehaviour
 
     public void LoadCharactor(int id)
     {
+        owner = GetComponent<Entity>();
+
         CharacterIndex = id;
         Skin = new GameObject();
         Skin.transform.SetParent(transform);
@@ -36,7 +38,7 @@ public class CharacterLoader : MonoBehaviour
         BncFile bnc = BncLoader.Instance.Load(id);
 
         rend.localBounds = skc.mesh.bounds;
-        //rend.materials = skc.Material(id, owner.Camp);
+        rend.materials = skc.Material(id);
         rend.sharedMesh = skc.mesh;
         rend.sharedMesh.RecalculateBounds();
 

@@ -313,13 +313,13 @@ public class SkcFile
         return line.Length - 1;
     }
 
-    /*
+    
     //0-19内的材质是3个，20-27的是单个
-    public Material[] Material(int roleIdx, EUnitCamp camp)
+    public Material[] Material(int roleIdx)
     {
         //return new UnityEngine.Material[0];
-        if (Game.Instance != null && Game.Instance.SkcMng != null)
-            return Game.Instance.SkcMng.GetPlayerMat(roleIdx, camp);
+        //if (Game.Instance != null && Game.Instance.SkcMng != null)
+        //    return Game.Instance.SkcMng.GetPlayerMat(roleIdx, camp);
         //使用预先设置好的材质球，降低DC和Batch
         Material[] ret = new Material[materials.Length];
         string strTexture = "";
@@ -354,5 +354,5 @@ public class SkcFile
             ret[i].SetColor("_Color", materials[i].Diffuse);
         }
         return ret;
-    }*/
+    }
 }
